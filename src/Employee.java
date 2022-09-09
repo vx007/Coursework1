@@ -43,17 +43,16 @@ public class Employee {
 
     @Override
     public String toString() {
-        return String.format("Имя: '%s' (Отдел %d, Зарплата %.2f, ID %d)", fullName, department, salary, id);
+        return String.format("Имя: '%s' (Отдел %d, Зарплата %.2f, ID %d)",
+                fullName, department, salary, id);
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj){
+        if (this == obj)
             return true;
-        }
-        if (obj == null || getClass() != obj.getClass()){
+        if (obj == null || getClass() != obj.getClass())
             return false;
-        }
         Employee employee = (Employee) obj;
         return id == employee.id && Objects.equals(fullName, employee.fullName);
     }
